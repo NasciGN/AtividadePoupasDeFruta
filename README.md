@@ -20,5 +20,6 @@ Caso seja marcado que se utilizará gelo reduzir a quantidade de água em 5%;
 
 
 Sugestão de interface:
+
 ![image](https://user-images.githubusercontent.com/74626734/192275862-e2d023e0-1ddd-49c1-bbb4-cbf742e2ccbe.png)
 
