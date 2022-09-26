@@ -1,0 +1,137 @@
+<TelaPrincipal>:
+    title: 'Segundo Aplicativo'
+    cols: 1
+    rows: 6
+
+    # Variaveis Globais
+
+    maracuja: maracuja
+    caju: caju
+    goiaba: goiaba
+    adAcucar: Acucar
+    adGelo: Gelo
+    litros: litros
+    mensagens: txtMensagens
+
+
+
+    canvas:
+        Color: 
+            rgba: (88/255, 108/255, 105/255, 1)
+        Rectangle:
+            pos: root.pos
+            size: root.size
+
+    GridLayout:
+        cols: 2
+        rows: 1
+        Label:
+            text: 'Quantos litros de suco você quer fazer?'
+            color: [1,1,1,1]
+        TextInput:
+            id: litros
+            hint_text: 'Coloque a quantidade aqui'
+            size_hint: 1, 0.02
+    
+    RelativeLayout:
+        Label:
+            text: 'Escolha a poupa desejada'
+            color: [1,1,1,1]
+    GridLayout:
+        cols: 6
+        rows: 1
+        Label:
+            pos_hint: {'x': 0, 'y': 0.5}
+            size_hint: [0.2, 0.08]
+            font_size: '14sp'
+            colot: [0,0,0,1]
+            text: 'Maracuja'
+        CheckBox:
+            id: maracuja
+            group: 'poupa'
+            text: 'Maracuja'
+            pos_hint: {'x': 0.05, 'y': 0.5}
+            size_hint: {0.2, 0.08}
+            color: 'white'
+
+       
+        Label:
+            pos_hint: {'x': 0.2, 'y': 0.5}
+            size_hint: [0.2, 0.08]
+            font_size: '14sp'
+            colot: [0,0,0,1]
+            text: 'Caju'
+        CheckBox:
+            id: caju
+            group: 'poupa'
+            text: 'Caju'
+            pos_hint: {'x': 0.255, 'y': 0.5}
+            size_hint: {0.2, 0.08}
+            color: 'white'
+
+        
+        Label:
+            pos_hint: {'x': 0.4, 'y': 0.5}
+            size_hint: [0.2, 0.08]
+            font_size: '14sp'
+            colot: [0,0,0,1]
+            text: 'Goiaba'
+        CheckBox:
+            id: goiaba
+            group: 'poupa'
+            text: 'Goiaba'
+            pos_hint: {'x': 0.455, 'y': 0.5}
+            size_hint: {0.2, 0.08}
+            color: 'white'
+
+
+    GridLayout:
+        cols: 3
+        rows: 1
+
+        canvas:
+            Color:
+                rgba: (.8, .8, .8, .7)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            CheckBox:
+                id: Acucar
+                color: 'black'
+                text: 'Açúcar'
+            Label:
+                font_size: '14sp'
+                color: 'black'
+                text: 'Açúcar'
+                halign: 'right'
+                valign: 'center'
+
+        BoxLayout:
+            CheckBox:
+                id: Gelo
+                color: 'black'
+                text: 'Gelo'
+            Label:
+                font_size: '14sp'
+                color: 'black'
+                text: 'Gelo'
+                halign: 'right'
+                valign: 'center'
+    
+    RelativeLayout:
+        Button:
+            id: btnVer
+            size_hint: None, None
+            size: 200, 50
+            pos_hint: {'center':(.5,.5)}
+            text: 'Verificar'
+            on_press:
+                root.VerificarEscolhas()
+        
+    RelativeLayout:
+        TextInput:
+            id: txtMensagens
+            color: 'black'
+            font_size: '12sp'
+            readonly: True
